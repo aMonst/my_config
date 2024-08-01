@@ -1,0 +1,54 @@
+set shiftwidth=4
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set number
+set relativenumber
+set tabstop=4
+set cursorline
+set clipboard=unnamed
+set scrolloff=5
+
+let mapleader="\<space>"
+
+nnoremap j gj
+nnoremap k gk
+nnoremap <C-f> <C-f>zz
+nnoremap <C-b> <C-b>zz
+
+noremap <leader>ee :tabnew ~/.config/VisualStudio/_vimrc<CR>
+noremap <leader>ss :source ~/.config/VisualStudio/_vimrc<CR>
+
+" set easy motion
+nnoremap <leader>f :vsc Tools.InvokePeasyMotion<CR>
+
+nnoremap gd :vsc Edit.GotoDefinition<CR>
+nnoremap gD :vsc Edit.GoToDeclaration<CR>
+
+nnoremap <leader>ff :vsc File.OpenFile<CR>
+nnoremap <leader>bg :vsc Tools.InvokePeasyMotionJumpToDocumentTab<CR>
+nnoremap <leader>/ :vsc Edit.ToggleLineComment<CR>
+nnoremap <Esc><Esc> :noh<CR>
+vnoremap <leader>/ :vsc Edit.ToggleLineComment<CR>
+nnoremap <leader>U gUiw
+nnoremap <leader>u guiw
+nnoremap " :vsc Edit.GotoLastEditLocation<CR>
+nnoremap <leader>lg :vsc View.Terminal<CR>
+nnoremap <leader>bp :vsc View.NavigateBackward<CR>
+nnoremap <leader>bn :vsc View.NavigateForward<CR>
+nnoremap [ :vsc Edit.RainbowPrevious<CR>
+nnoremap ] :vsc Edit.RainbowNext<CR>
+nnoremap <CR> :vsc Edit.ExpandSelection<CR>
+vnoremap <CR> :vsc Edit.ExpandSelection<CR>
+vnoremap <Esc> :vsc Edit.ContractSelection<CR>
+
+"替换Windows路径中的\为\\
+vnoremap <F2> :s/\%V\\/\//g<CR>:noh<CR>
+
+"toggle bookmark
+nnoremap <leader>b :vsc Edit.ToggleBookmark<CR> 
+"goto next bookmark
+nnoremap gb :vsc Edit.NextBookmark<CR> 
+"goto prev bookmark
+nnoremap gB :vsc Edit.PreviousBookmark<CR> 
